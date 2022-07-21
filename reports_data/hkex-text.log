@@ -1,0 +1,89 @@
+20220722 02:56:06 INFO - =================================================================
+20220722 02:56:06 INFO - Analysis started at 20220722 02:56:06
+20220722 02:56:06 INFO - Command line:	/home/jiwooshim/PycharmProjects/hkex-text-mda/main.py
+20220722 02:56:06 INFO - Arguments:		/home/jiwooshim/PycharmProjects/hkex-text-mda/main.py -t2 40100 -fd 202201 -td 202201
+20220722 02:56:06 INFO - =================================================================
+20220722 02:56:06 INFO - Selected t2code==40100, Processing 'Annual Report' report type
+20220722 02:56:06 INFO - Selected date range is from 202201 to 202201
+20220722 02:56:06 INFO - =================================================================
+20220722 02:56:07 INFO - Start report download
+20220722 02:56:07 INFO - Downloading y 2022, m 01
+20220722 02:56:07 INFO - Total Record return: 20
+20220722 02:56:07 INFO - Still have next row: False
+20220722 02:56:07 INFO - Loaded Record: 20
+20220722 02:56:07 INFO - Total Record: 20
+20220722 02:56:07 INFO - 0 : 03928 : S&T HLDGS : ANNUAL REPORT 2020 : 03928_10106800_20220131_ANNUAL-REPORT-2020.pdf : [Downloaded]
+20220722 02:56:07 INFO - 1 : 01678 : CREATIVE GLOBAL : Annual Report 2019 : 01678_10105893_20220128_Annual-Report-2019.pdf : [Downloaded]
+20220722 02:56:07 INFO - 2 : 02324 : CAPITAL VC : Annual Report 2020/21 : 02324_10105815_20220128_Annual-Report-202021.pdf : [Downloaded]
+20220722 02:56:08 INFO - 3 : 00717 : EMPEROR CAPITAL : Annual Report 2020/2021 : 00717_10105340_20220128_Annual-Report-20202021.pdf : [Downloaded]
+20220722 02:56:08 INFO - 4 : 00007 : WISDOM WEALTH : Annual Report 2020 : 00007_10105290_20220128_Annual-Report-2020.pdf : [Downloaded]
+20220722 02:56:08 INFO - 5 : 02843,82843 : AMUNDI A50,AMUNDI A50-R : Annual report and audited accounts for the period ending on 30 September 2021 : 02843.82843_10105280_20220128_Annual-report-and-audited-accounts-for-the-period-ending-on-30-September-2021.pdf : [Downloaded]
+20220722 02:56:08 INFO - 6 : 03012,83012 : AMUNDI HK35,AMUNDI HK35-R : Annual report and audited accounts for the period ending on 30 September 2021 : 03012.83012_10105272_20220128_Annual-report-and-audited-accounts-for-the-period-ending-on-30-September-2021.pdf : [Downloaded]
+20220722 02:56:08 INFO - 7 : 02843,82843 : AMUNDI A50,AMUNDI A50-R : Announcement - Annual report and audited accounts for the period ending on 30 September 2021 : 02843.82843_10105242_20220128_Announcement---Annual-report-and-audited-accounts-for-the-period-ending-on-30-September-2021.pdf : [Downloaded]
+20220722 02:56:08 INFO - 8 : 03012,83012 : AMUNDI HK35,AMUNDI HK35-R : Announcement - Annual report and audited accounts for the period ending on 30 September 2021 : 03012.83012_10105234_20220128_Announcement---Annual-report-and-audited-accounts-for-the-period-ending-on-30-September-2021.pdf : [Downloaded]
+20220722 02:56:08 INFO - 9 : 01741 : RI YING HLDGS : ANNUAL REPORT 2021 : 01741_10104993_20220128_ANNUAL-REPORT-2021.pdf : [Downloaded]
+20220722 02:56:08 INFO - 10 : 00860 : APOLLO FMG : Annual Report 2021 : 00860_10103831_20220127_Annual-Report-2021.pdf : [Downloaded]
+20220722 02:56:08 INFO - 11 : 08169 : ECO-TEK HLDGS : 2021 Annual Report : 08169_10102497_20220126_2021-Annual-Report.pdf : [Downloaded]
+20220722 02:56:08 INFO - 12 : 01611 : HUOBI TECH : Annual Report 2021 : 01611_10100833_20220125_Annual-Report-2021.pdf : [Downloaded]
+20220722 02:56:08 INFO - 13 : 03073 : SPDR GREATCHINA : Annual Report 2021 : 03073_10100667_20220125_Annual-Report-2021.pdf : [Downloaded]
+20220722 02:56:09 INFO - 14 : 00640 : INFINITY DEV : ANNUAL REPORT 2021 : 00640_10093549_20220118_ANNUAL-REPORT-2021.pdf : [Downloaded]
+20220722 02:56:09 INFO - 15 : 01161 : WATER OASIS GP : Annual Report 2021 : 01161_10089444_20220113_Annual-Report-2021.pdf : [Downloaded]
+20220722 02:56:09 INFO - 16 : 00618 : PKU RESOURCES : 2020 ANNUAL REPORT : 00618_10088751_20220112_2020-ANNUAL-REPORT.pdf : [Downloaded]
+20220722 02:56:09 INFO - 17 : 06068 : WISDOM EDU INTL : Annual Report 2021 : 06068_10086646_20220111_Annual-Report-2021.pdf : [Downloaded]
+20220722 02:56:09 INFO - 18 :  :  : Yiwu State-owned Capital Operation Co., Ltd. For The Year Ended 31 December 2020 Auditor's Report : _10082707_20220106_Yiwu-State-owned-Capital-Operation-Co.,-Ltd.-For-The-Year-Ended-31-December-2020-Auditor's-Report.txt : [Downloaded]
+20220722 02:56:09 INFO - 19 : 01721 : FSM HOLDINGS : 2020 ANNUAL REPORT : 01721_10081926_20220106_2020-ANNUAL-REPORT.pdf : [Downloaded]
+20220722 02:56:09 INFO - Download complete. Elapsed time: 2.5259790420532227
+20220722 02:56:09 INFO - =================================================================
+20220722 02:56:09 INFO - Start MD&A extraction
+20220722 02:56:09 INFO - Processing folder: 2022_01
+20220722 02:56:10 INFO - 2022_01 : 03928_10106800_20220131_ANNUAL-REPORT-2020.pdf : Management Discussion and Analysis : [Success]
+20220722 02:56:10 INFO - 2022_01 : 01161_10089444_20220113_Annual-Report-2021.pdf : Management Discussion and Analysis : [Success]
+20220722 02:56:10 INFO - 2022_01 : 01611_10100833_20220125_Annual-Report-2021.pdf : Management Discussion and Analysis : [Success]
+20220722 02:56:10 INFO - 2022_01 : 00640_10093549_20220118_ANNUAL-REPORT-2021.pdf : MANAGEMENT DISCUSSION AND ANALYSIS : [Success]
+20220722 02:56:11 INFO - 2022_01 : 00860_10103831_20220127_Annual-Report-2021.pdf : MANAGEMENT DISCUSSION AND ANALYSIS : [Success]
+20220722 02:56:12 INFO - 2022_01 : 06068_10086646_20220111_Annual-Report-2021.pdf : Management Discussion and Analysis : [Success]
+20220722 02:56:12 INFO - 2022_01 : 00618_10088751_20220112_2020-ANNUAL-REPORT.pdf : MANAGEMENT DISCUSSION AND  ANALYSIS : [Success]
+20220722 02:56:12 INFO - 2022_01 : 00717_10105340_20220128_Annual-Report-20202021.pdf : MANAGEMENT DISCUSSION AND ANALYSIS : [Success]
+20220722 02:56:13 INFO - 2022_01 : 00007_10105290_20220128_Annual-Report-2020.pdf : Management Discussion and Analysis : [Success]
+20220722 02:56:14 INFO - 2022_01 : 01721_10081926_20220106_2020-ANNUAL-REPORT.pdf : Management Discussion and Analysis : [Success]
+20220722 02:56:14 INFO - 2022_01 : 01741_10104993_20220128_ANNUAL-REPORT-2021.pdf : Management Discussion and Analysis : [Success]
+20220722 02:56:14 INFO - 2022_01 : 01678_10105893_20220128_Annual-Report-2019.pdf : MANAGEMENT DISCUSSION AND ANALYSIS : [Success]
+20220722 02:56:15 INFO - 2022_01 : 08169_10102497_20220126_2021-Annual-Report.pdf : Management Discussion and Analysis : [Success]
+20220722 02:56:15 INFO - 2022_01 : 02324_10105815_20220128_Annual-Report-202021.pdf : MANAGEMENT DISCUSSION AND ANALYSIS : [Success]
+20220722 02:56:15 INFO - 2022_01 : 03073_10100667_20220125_Annual-Report-2021.pdf : None : [Fail]
+20220722 02:56:15 INFO - MD&A PDF extraction complete. Elapsed time: 6.228129148483276
+20220722 02:56:15 INFO - =================================================================
+20220722 02:56:15 INFO - Start text extraction
+20220722 02:56:16 INFO - Processing folder: 2022_01
+20220722 02:56:16 INFO - 2022_01 : 00007_10105290_20220128_Annual-Report-2020_pages_8-19_Management_Discussion_and_Analysis_ENG.txt : ENG : [Success]
+20220722 02:56:16 INFO - 2022_01 : 00007_10105290_20220128_Annual-Report-2020_pages_8-19_Management_Discussion_and_Analysis_CHI.txt : CHI : [Success]
+20220722 02:56:16 INFO - 2022_01 : 00640_10093549_20220118_ANNUAL-REPORT-2021_pages_6-11_MANAGEMENT_DISCUSSION_AND_ANALYSIS_ENG.txt : ENG : [Success]
+20220722 02:56:16 INFO - 2022_01 : 00640_10093549_20220118_ANNUAL-REPORT-2021_pages_6-11_MANAGEMENT_DISCUSSION_AND_ANALYSIS_CHI.txt : CHI : [Success]
+20220722 02:56:16 INFO - 2022_01 : 01161_10089444_20220113_Annual-Report-2021_pages_7-14_Management_Discussion_and_Analysis_ENG.txt : ENG : [Success]
+20220722 02:56:16 INFO - 2022_01 : 01161_10089444_20220113_Annual-Report-2021_pages_7-14_Management_Discussion_and_Analysis_CHI.txt : CHI : [Failed]
+20220722 02:56:16 INFO - 2022_01 : 00860_10103831_20220127_Annual-Report-2021_pages_13-19_MANAGEMENT_DISCUSSION_AND_ANALYSIS_ENG.txt : ENG : [Success]
+20220722 02:56:16 INFO - 2022_01 : 00860_10103831_20220127_Annual-Report-2021_pages_13-19_MANAGEMENT_DISCUSSION_AND_ANALYSIS_CHI.txt : CHI : [Failed]
+20220722 02:56:16 INFO - 2022_01 : 06068_10086646_20220111_Annual-Report-2021_pages_12-24_Management_Discussion_and_Analysis_ENG.txt : ENG : [Success]
+20220722 02:56:16 INFO - 2022_01 : 06068_10086646_20220111_Annual-Report-2021_pages_12-24_Management_Discussion_and_Analysis_CHI.txt : CHI : [Failed]
+20220722 02:56:16 INFO - 2022_01 : 02324_10105815_20220128_Annual-Report-202021_pages_10-21_MANAGEMENT_DISCUSSION_AND_ANALYSIS_ENG.txt : ENG : [Success]
+20220722 02:56:16 INFO - 2022_01 : 02324_10105815_20220128_Annual-Report-202021_pages_10-21_MANAGEMENT_DISCUSSION_AND_ANALYSIS_CHI.txt : CHI : [Success]
+20220722 02:56:16 INFO - 2022_01 : 01611_10100833_20220125_Annual-Report-2021_pages_7-19_Management_Discussion_and_Analysis_ENG.txt : ENG : [Success]
+20220722 02:56:16 INFO - 2022_01 : 01611_10100833_20220125_Annual-Report-2021_pages_7-19_Management_Discussion_and_Analysis_CHI.txt : CHI : [Failed]
+20220722 02:56:16 INFO - 2022_01 : 01678_10105893_20220128_Annual-Report-2019_pages_10-17_MANAGEMENT_DISCUSSION_AND_ANALYSIS_ENG.txt : ENG : [Success]
+20220722 02:56:16 INFO - 2022_01 : 01678_10105893_20220128_Annual-Report-2019_pages_10-17_MANAGEMENT_DISCUSSION_AND_ANALYSIS_CHI.txt : CHI : [Failed]
+20220722 02:56:16 INFO - 2022_01 : 00618_10088751_20220112_2020-ANNUAL-REPORT_pages_14-29_MANAGEMENT_DISCUSSION_AND__ANALYSIS_ENG.txt : ENG : [Success]
+20220722 02:56:16 INFO - 2022_01 : 00618_10088751_20220112_2020-ANNUAL-REPORT_pages_14-29_MANAGEMENT_DISCUSSION_AND__ANALYSIS_CHI.txt : CHI : [Failed]
+20220722 02:56:16 INFO - 2022_01 : 01721_10081926_20220106_2020-ANNUAL-REPORT_pages_7-12_Management_Discussion_and_Analysis_ENG.txt : ENG : [Success]
+20220722 02:56:16 INFO - 2022_01 : 01721_10081926_20220106_2020-ANNUAL-REPORT_pages_7-12_Management_Discussion_and_Analysis_CHI.txt : CHI : [Failed]
+20220722 02:56:16 INFO - 2022_01 : 00717_10105340_20220128_Annual-Report-20202021_pages_6-14_MANAGEMENT_DISCUSSION_AND_ANALYSIS_ENG.txt : ENG : [Success]
+20220722 02:56:16 INFO - 2022_01 : 00717_10105340_20220128_Annual-Report-20202021_pages_6-14_MANAGEMENT_DISCUSSION_AND_ANALYSIS_CHI.txt : CHI : [Success]
+20220722 02:56:16 INFO - 2022_01 : 08169_10102497_20220126_2021-Annual-Report_pages_10-12_Management_Discussion_and_Analysis_ENG.txt : ENG : [Success]
+20220722 02:56:16 INFO - 2022_01 : 08169_10102497_20220126_2021-Annual-Report_pages_10-12_Management_Discussion_and_Analysis_CHI.txt : CHI : [Failed]
+20220722 02:56:16 INFO - 2022_01 : 03928_10106800_20220131_ANNUAL-REPORT-2020_pages_6-13_Management_Discussion_and_Analysis_ENG.txt : ENG : [Success]
+20220722 02:56:16 INFO - 2022_01 : 03928_10106800_20220131_ANNUAL-REPORT-2020_pages_6-13_Management_Discussion_and_Analysis_CHI.txt : CHI : [Failed]
+20220722 02:56:16 INFO - 2022_01 : 01741_10104993_20220128_ANNUAL-REPORT-2021_pages_5-13_Management_Discussion_and_Analysis_ENG.txt : ENG : [Success]
+20220722 02:56:16 INFO - 2022_01 : 01741_10104993_20220128_ANNUAL-REPORT-2021_pages_5-13_Management_Discussion_and_Analysis_CHI.txt : CHI : [Failed]
+20220722 02:56:17 INFO - MD&A text extraction complete. Elapsed time: 1.3746356964111328
+20220722 02:56:17 INFO - =================================================================
+20220722 02:56:17 INFO - Module total elapsed time: 10.409917831420898
+20220722 02:56:17 INFO - =================================================================

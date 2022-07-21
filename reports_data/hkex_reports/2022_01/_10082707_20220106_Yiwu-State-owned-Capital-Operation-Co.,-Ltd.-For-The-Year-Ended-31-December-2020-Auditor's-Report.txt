@@ -1,0 +1,74 @@
+<!--SEHKNEWS-->
+<html>
+	<head>
+		<meta name="MS.LOCALE" content="EN-US" />
+		<style type="text/css">
+			.normfont {font-family:""}
+			.colorfont {font-family:""; color: #336699}
+		</style>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<link href="../../../../../ncms/images/favicon.ico" rel="shortcut icon" type="image/x-icon" ></link>
+		<!-- START OF SmartSource Data Collector TAG v10.4.23 -->
+		<!-- Copyright (c) 2017 Webtrends Inc. All rights reserved. -->
+		<script type="text/javascript" src="/ncms/script/webtrends/webtrends.load.js"></script>
+		<noscript><img alt="dcsimg" id="dcsimg" width="1" height="1" src="//analytics.hkex.com.hk/dcsg6q2w4su4h6j067ggrpsct_2h5d/njs.gif?dcsuri=/nojavascript&amp;WT.js=No&amp;WT.tv=10.4.23&amp;dcssip=www.hkexnews.hk"/></noscript>
+		<!-- END OF SmartSource Data Collector TAG v10.4.23 -->
+	</head>
+
+	<body bgcolor="#ffffff" background="../../../../../ncms/images/common/2ndbg.gif" text="#000000" topmargin="0" leftmargin="0" marginwidth="0" marginheight="0">
+		<script language="javascript" src="../../../../../ncms/js/hkex_security.js"></script>
+<!--pre-->
+		<table width="500" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td>
+                    <font color="000000" size="3" class="normfont" type="docName" >
+                        <u>Yiwu State-owned Capital Operation Co., Ltd. For The Year Ended 31 December 2020 Auditor&#x27;s Report</u>
+                    </font>
+                </td>
+            </tr>
+        </table>
+		<br/>
+		<p>&nbsp;</p>
+		<table width="500" border="0" cellspacing="0" cellpadding="0">
+			<tr><td colspan="3"></td></tr>
+			<tr>
+				<td><img src="../../../../../ncms/images/common/blank.gif" border="0" width="5" height="1" /></td>
+				<td colspan="2" align="left" width="490" >
+					<font class="colorfont" size="3" type="compName" ><b>Yiwu State-owned Capital Operation Co., Ltd.</b></font>
+				</td>
+			</tr>
+			<tr><td height="20">&nbsp;</td></tr>
+		</table>
+		<table width="500" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td width="5" valign="top"><img src="../../../../../ncms/images/common/blank.gif" border="0" width="5" height="1" /></td>
+				<td valign="top" width="5">&nbsp;</td>
+				<td valign="top" align="left" width="320" >
+					<img src="../../../../../ncms/images/common/blank.gif" border="0" width="320" height="1" />
+					<br/>
+						<table border="0" cellspacing="2" cellpadding="2" width="320">
+							<tr>
+								<td><img src="../../../../../ncms/images/common/blank.gif" border="0" width="20" height="1" /></td>
+								<td colspan="2" ><img src="../../../../../ncms/images/common/blank.gif" border="0" width="300" height="1" /></td>
+							</tr>
+							
+
+<tr id="item_f41c01b3-c93b-43a4-9b4b-7d77e90a97a2">
+<td align="center" valign="top" width="25"><font class="colorfont" size="-1" type="bullet">►</font></td>
+<td colspan="2"><font class="normfont" size="-1" type="uploadFile"><a fileName="2022010601561.pdf" href="10082707/2022010601561.pdf" target="_blank">Yiwu State-owned Capital Operation Co., Ltd. For The Year Ended 31 December 2020 Auditor's Report</a></font></td>
+</tr>
+
+<tr id="item_b31fe5fd-33ff-4f44-840c-be6d92c44eb7">
+<td align="center" valign="top" width="25"><font class="colorfont" size="-1" type="bullet">►</font></td>
+<td colspan="2"><font class="normfont" size="-1" type="uploadFile"><a fileName="2022010601562.pdf" href="10082707/2022010601562.pdf" target="_blank">Financial Statement Submission Form</a></font></td>
+</tr>
+
+<!--/pre-->
+						</table>
+						<p>&nbsp;</p>
+						<p>&nbsp;</p>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>
