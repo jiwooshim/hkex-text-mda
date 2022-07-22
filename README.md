@@ -1,4 +1,4 @@
-# hkex-text-mda
+# HKEX Text MD&A
 **hkex-text-mda** crawls, downloads, and extracts the "Management Discussion and Analysis" seciton from the PDF files. The extracted section are saved in both PDF and TXT formats for usage suitable for further PDF or text processing. 
 
 Includes all reports data from HKEX from 2007 June onwards, as allowed in https://www.hkexnews.hk/. Outputs organized structure of files in separate sub-directories for an easy accessibility, includes a log and a SQLite3 database file for further processing (like failure analysis or creating statistics summary). 
