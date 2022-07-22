@@ -6,12 +6,12 @@ from datetime import datetime
 import traceback
 import sys
 import time
-from utils import module_path, download_path, reports_path, mda_path, mda_text_path, metadata_db
-from utils import module_start_time, t1codeVal, t2codeVal, from_date, to_date
-from utils import logger
-import get_report
-import get_mda
-import extract_text
+from .utils import module_path, download_path, reports_path, mda_path, mda_text_path, metadata_db
+from .utils import module_start_time, t1codeVal, t2codeVal, from_date, to_date
+from .utils import logger
+from . import get_report
+from . import get_mda
+from . import extract_text
 
 
 def main():

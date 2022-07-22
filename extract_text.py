@@ -9,20 +9,20 @@ import os
 from collections import Counter
 import fitz
 import sqlite3
-import utils
 import sys
 import traceback
 import time
-from utils import module_path, download_path, reports_path, mda_path, mda_text_path, metadata_db
-from utils import module_start_time, t1codeVal, t2codeVal, from_date, to_date
-from utils import logger
+from . import utils
+from .utils import module_path, download_path, reports_path, mda_path, mda_text_path, metadata_db
+from .utils import module_start_time, t1codeVal, t2codeVal, from_date, to_date
+from .utils import logger
 
 
 def get_mda_text(source_path, saveDoc_text):
     cur = metadata_db.cursor()
 
     folderList = os.listdir(source_path)
-    folderList.sort(reverse=True)
+    folderList.sort()
 
     for folder in folderList:
         if os.path.isfile(os.path.join(source_path, folder)):

@@ -12,14 +12,12 @@ from datetime import datetime
 import calendar
 import sqlite3
 from bs4 import BeautifulSoup
-
 import traceback
 import sys
-import utils
-from utils import module_path, download_path, reports_path, mda_path, metadata_db
-from utils import module_start_time, t1codeVal, t2codeVal, from_date, to_date
-from utils import logger
-import get_mda
+from .utils import module_path, download_path, reports_path, mda_path, metadata_db
+from .utils import module_start_time, t1codeVal, t2codeVal, from_date, to_date
+from .utils import logger
+from . import utils, get_mda
 
 
 def get_pdf(html_doc, url, filepath):

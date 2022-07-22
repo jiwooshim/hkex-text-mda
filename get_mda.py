@@ -6,34 +6,24 @@ import os.path
 import pandas as pd
 import PyPDF2
 from pathlib import Path
-from bs4 import BeautifulSoup
-import requests
-import re
 import os
-from collections import Counter
-import string
-import pikepdf
-import shutil
 import sqlite3
-import random
-import utils
 from thefuzz import fuzz, process
-import datetime
-from tqdm import tqdm
 import fitz
 import time
 import traceback
 import sys
-from utils import module_path, download_path, reports_path, mda_path, metadata_db
-from utils import module_start_time, t1codeVal, t2codeVal, from_date, to_date
-from utils import logger
+from . import utils
+from .utils import module_path, download_path, reports_path, mda_path, metadata_db
+from .utils import module_start_time, t1codeVal, t2codeVal, from_date, to_date
+from .utils import logger
 
 
 def get_mda(source_path, saveDoc_mda):
     cur = metadata_db.cursor()
 
     folderList = os.listdir(source_path)
-    folderList.sort(reverse=True)
+    folderList.sort()
 
     for folder in folderList:
         if os.path.isfile(os.path.join(source_path, folder)):

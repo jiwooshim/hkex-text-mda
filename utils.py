@@ -28,17 +28,17 @@ parser.add_argument("--report_type", "-t2", required=True, help='-2 => All Finan
                                                                 '40300 => Quarterly Report 40400 => ESG '
                                                                 'Information/Report')
 parser.add_argument("--from_date", "-fd", required=True, help="From date of the report to be downloaded. "
-                                                              "Format='yyyymmdd' for days, 'yyyymm' for months "
+                                                              "Format='yyyymmdd' for days, 'yyyymm' for months, and "
                                                               "'yyyy' for years. For example, '2018' will include all "
                                                               "reports from 2018 to the year specified in --to_date. "
                                                               "NOTICE: The format of --from_date and --to_date should "
                                                               "match."
                                                               "NOTICE2: The earliest date value limit is 2007 June.")
 parser.add_argument("--to_date", "-td", required=True, help="To date of the report to be downloaded. "
-                                                            "Format='yyyymmdd' for days, 'yyyymm' for months "
+                                                            "Format='yyyymmdd' for days, 'yyyymm' for months, and "
                                                             "'yyyy' for years. For example, '2018' will include all "
                                                             "reports up to 2018 from the year specified in --from_date."
-                                                            " NOTICE: the format of --from_date and --to_date should "
+                                                            " NOTICE: The format of --from_date and --to_date should "
                                                             "match")
 args = parser.parse_args(sys.argv[1:])
 
@@ -50,6 +50,8 @@ if args.download_path:
     download_path = args.download_path
 else:
     download_path = os.path.join(module_path, 'reports_data')
+if not os.path.exists(download_path):
+    os.makedirs(download_path)
 reports_path = os.path.join(download_path, 'hkex_reports')
 mda_path = os.path.join(download_path, 'hkex_reports_mda')
 mda_text_path = os.path.join(download_path, 'hkex_reports_mda_text')
