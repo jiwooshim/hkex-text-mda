@@ -26,7 +26,7 @@ python3 -m hkex-text-mda -t2 40100 -fd 202001 -td 202106 -dp /home/jiwooshim/hke
 ```
 
 ### Output
-* This module yields three main outputs plus two others.
+This module yields three main outputs plus two others.
 
 #### 1. "hkex_reports" directory 
 * Contains original PDF files organized by months. 
