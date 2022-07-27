@@ -14,7 +14,7 @@ pip install -r requirements.txt
 ### Input arguments
 | Parameter | Required | Description |
 | -- | -- | -- |
-|-dp--download_path | False | Absolute directory where you want to save your file. <br/>Default:.reports_data |
+|-dp --download_path | False | Absolute directory where you want to save your file. <br/>Default:.reports_data |
 | -t2 --report_type | True | -2 => All Financial Statements/ESG Information, <br/>40100 => Annual Report, <br/>40200 => Semi-annual Report <br/>40300 => Quarterly Report <br/>40400 => ESG Information/Report |
 | -fd --from_date | True | From date of the report to be donwloaded. <br/>Format='yyyymmdd' for days, 'yyyymm' for months, and 'yyyy' for years. For example, '2018' will include all reports from 2018 to the year specified in --to_date. <br/>NOTICE: The format of --from_date and --to_date should match. <br/>NOTICE2: The earliest date value limit is 2007 June. |
 | -td --to_date | True | To date of the report to be downloaded. <br/>Format='yyyymmdd' for days, 'yyyymm' for months, and 'yyyy' for years. For example, '2018' will include all reports up to 2018 from the yar specified in --from_date. <br/>NOTICE: The format of --from_date and --to_date should match |
