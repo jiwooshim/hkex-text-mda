@@ -26,25 +26,25 @@ python3 -m hkex-text-mda -t2 40100 -fd 202001 -td 202106 -dp /home/jiwooshim/hke
 ```
 
 ### Output
-This module yields three main outputs plus two others.
+* This module yields three main outputs plus two others.
 
 #### 1. "hkex_reports" directory 
-Contains original PDF files organized by months. 
-File format: ```{STOCK-CODE}\_{NEWS-ID}\_{yyyymmdd}\_{REPORT-TITLE-HYPHENED}.pdf```
+* Contains original PDF files organized by months. 
+* File format: ```{STOCK-CODE}\_{NEWS-ID}\_{yyyymmdd}\_{REPORT-TITLE-HYPHENED}.pdf```
 
 #### 2. "hkex_reports_mda" directory
-Contains extracted PDF files for MD&A organized by months. 
-File format: ```{STOCK-CODE}\_{NEWS-ID}\_{yyyymmdd}\_{REPORT-TITLE-HYPHENED}\_pages_{START-PAGE}-{END-PAGE}\_{MD&A-OUTLINE-TITLE-MATCHED}.pdf```
+* Contains extracted PDF files for MD&A organized by months. 
+* File format: ```{STOCK-CODE}\_{NEWS-ID}\_{yyyymmdd}\_{REPORT-TITLE-HYPHENED}\_pages_{START-PAGE}-{END-PAGE}\_{MD&A-OUTLINE-TITLE-MATCHED}.pdf```
 
 #### 3. "hkex_reports_mda_text" directory
-Contains extracted TXT files for MD&A organized by months. 
-File format: ```{STOCK-CODE}\_{NEWS-ID}\_{yyyymmdd}\_{REPORT-TITLE-HYPHENED}\_pages_{START-PAGE}-{END-PAGE}\_{MD&A-OUTLINE-TITLE-MATCHED}\_{ENG-OR-CHI}.txt```
+* Contains extracted TXT files for MD&A organized by months. 
+* File format: ```{STOCK-CODE}\_{NEWS-ID}\_{yyyymmdd}\_{REPORT-TITLE-HYPHENED}\_pages_{START-PAGE}-{END-PAGE}\_{MD&A-OUTLINE-TITLE-MATCHED}\_{ENG-OR-CHI}.txt```
 
 #### 4. "metadata_yyyymmdd.db" database
-Contains three tables each containing report details for each of the above outputs.
+* Contains three tables each containing report details for each of the above outputs.
 
 #### 5. "hkex-text.log" logfile
-Logger set-up for logging the whole operation.
+* Logger set-up for logging the whole operation.
 
 ## Success rate
 The overall success rate is 81.5% for all reports, including those originally coming without an MD&A such as ETF reports. Also, MD&A can sometimes be included in sections in a different name, like "Chairman's Statements" (especially for older reports). The success rate that includes the keyword "Chairman's Statements" is 93.3%, but this module avoids it to keep the most accurate extraction. 
