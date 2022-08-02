@@ -25,18 +25,21 @@ def get_mda(source_path, saveDoc_mda):
     folderList = os.listdir(source_path)
     folderList.sort()
 
-    for folder in folderList:
-        if os.path.isfile(os.path.join(source_path, folder)):
-            continue
-        if int(folder.split("_")[0]) < 2007:
-            continue
-        if "_mda" in folder or "_mda_test" in folder:
-            continue
-        if folder+"_mda" in folderList:
-            continue
-        logger.info(f"Processing folder: {folder}")
-
-        fileList = os.listdir(os.path.join(source_path, folder))
+    for idx, folder in enumerate(folderList):
+        if idx+1 == len(folderList):
+            fileList = folderList
+            folder = ''
+        else:
+            if os.path.isfile(os.path.join(source_path, folder)):
+                continue
+            if int(folder.split("_")[0]) < 2007:
+                continue
+            if "_mda" in folder or "_mda_test" in folder:
+                continue
+            if folder+"_mda" in folderList:
+                continue
+            logger.info(f"Processing folder: {folder}")
+            fileList = os.listdir(os.path.join(source_path, folder))
 
         for file in fileList:
             if not file.lower().endswith('pdf'):
@@ -78,7 +81,6 @@ def get_mda(source_path, saveDoc_mda):
                 logger.debug(traceback.print_exception(*sys.exc_info()))
                 status = "error"
 
-            year = folder[:5] + folder.split("_")[1].zfill(2)
             ticker = file.split("_")[0]
             query = f'''INSERT INTO metadata_mda VALUES (
             "{file}", 

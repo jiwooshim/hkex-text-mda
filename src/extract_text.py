@@ -24,15 +24,17 @@ def get_mda_text(source_path, saveDoc_text):
     folderList = os.listdir(source_path)
     folderList.sort()
 
-    for folder in folderList:
-        if os.path.isfile(os.path.join(source_path, folder)):
-            continue
-        if int(folder.split("_")[0]) < 2007:
-            continue
-
-        logger.info(f"Processing folder: {folder}")
-
-        fileList = os.listdir(os.path.join(source_path, folder))
+    for idx, folder in enumerate(folderList):
+        if idx+1 == len(folderList):
+            fileList = folderList
+            folder = ''
+        else:
+            if os.path.isfile(os.path.join(source_path, folder)):
+                continue
+            if int(folder.split("_")[0]) < 2007:
+                continue
+            logger.info(f"Processing folder: {folder}")
+            fileList = os.listdir(os.path.join(source_path, folder))
         for file in fileList:
             if not file.lower().endswith('pdf'):
                 continue
