@@ -2,7 +2,7 @@
 Utilities script. Includes argparse, logging, global variables.
 Last updated: July 2022
 """
-import os.path
+import os
 import pandas as pd
 import PyPDF2
 import re
@@ -70,18 +70,18 @@ t2codeVal = args.report_type
 
 from_date = args.from_date
 to_date = args.to_date
+subfolders_required = True
 if len(from_date) == 8 and len(to_date) == 8:
+    subfolders_required = False
     if (datetime.strptime(to_date, '%Y%m%d') - datetime.strptime(from_date, '%Y%m%d')) > timedelta(days=365):
         raise Exception("Date range from_date to to_date should be less than 365 days. Please use monthly or yearly "
-                        "range if you need data from a range bigger than 1 year.")
-
+                        "range if you need data for a range bigger than 1 year.")
 """Set up logging"""
-log_path = os.path.join(download_path, 'hkex-text.log')
-
 logger = logging.getLogger('hkex-text')
 logger.setLevel(logging.DEBUG)
 formatter = logging.Formatter(fmt='%(asctime)s %(levelname)s - %(message)s', datefmt='%Y%m%d %H:%M:%S')
 
+log_path = os.path.join(download_path, 'hkex-text.log')
 file_handler = logging.FileHandler(log_path)
 file_handler.setFormatter(formatter)
 file_handler.setLevel(logging.DEBUG)

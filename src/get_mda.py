@@ -14,7 +14,7 @@ import time
 import traceback
 import sys
 from . import utils
-from .utils import module_path, download_path, reports_path, mda_path, metadata_db
+from .utils import module_path, download_path, reports_path, mda_path, metadata_db, subfolders_required
 from .utils import module_start_time, t1codeVal, t2codeVal, from_date, to_date
 from .utils import logger
 
@@ -26,7 +26,7 @@ def get_mda(source_path, saveDoc_mda):
     folderList.sort()
 
     for idx, folder in enumerate(folderList):
-        if idx+1 == len(folderList):
+        if not subfolders_required:
             fileList = folderList
             folder = ''
         else:
@@ -95,6 +95,8 @@ def get_mda(source_path, saveDoc_mda):
                 cur.execute(query)
             except sqlite3.OperationalError as e:
                 logger.debug(traceback.print_exception(*sys.exc_info()))
+        if not subfolders_required:
+            break
     cur.close()
 
 

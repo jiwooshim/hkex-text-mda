@@ -130,7 +130,7 @@ def main():
     script_start_time = time.time()
     utils.init_db()
     if len(from_date) == 8 and len(to_date) == 8:
-        """Parsing dates"""
+        """Parsing dates (yyyymmdd)"""
         if not os.path.exists(reports_path):
             os.makedirs(reports_path)
         if not os.path.exists(mda_path):
@@ -138,7 +138,7 @@ def main():
         logger.info(f"Downloading from {from_date} to {to_date}")
         download_report(from_date, to_date, saveDoc=reports_path, saveDoc_mda=mda_path)
     elif len(from_date) == 6 and len(to_date) == 6:
-        """Parsing months"""
+        """Parsing months (yyyymm)"""
         from_year = int(from_date[:4])
         to_year = int(to_date[:4])
         from_month = int(from_date[4:6])
@@ -164,7 +164,7 @@ def main():
                 toDateVal = f'{year}{month}{month_end_date}'
                 download_report(fromDateVal, toDateVal, saveDoc=saveDoc, saveDoc_mda=saveDoc_mda)
     elif len(from_date) == 4 and len(to_date) == 4:
-        """Parsing years"""
+        """Parsing years (yyyy)"""
         from_year = int(from_date[:4])
         to_year = int(to_date[:4])
         for year in range(from_year, to_year+1):
