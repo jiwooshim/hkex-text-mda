@@ -2,7 +2,7 @@
 Utilities script. Includes argparse, logging, global variables.
 Last updated: July 2022
 """
-import os.path
+import os
 import pandas as pd
 import PyPDF2
 import re

@@ -13,7 +13,7 @@ import sys
 import traceback
 import time
 from . import utils
-from .utils import module_path, download_path, reports_path, mda_path, mda_text_path, metadata_db
+from .utils import module_path, download_path, reports_path, mda_path, mda_text_path, metadata_db, subfolders_required
 from .utils import module_start_time, t1codeVal, t2codeVal, from_date, to_date
 from .utils import logger
 
@@ -25,7 +25,7 @@ def get_mda_text(source_path, saveDoc_text):
     folderList.sort()
 
     for idx, folder in enumerate(folderList):
-        if idx+1 == len(folderList):
+        if not subfolders_required:
             fileList = folderList
             folder = ''
         else:
@@ -35,6 +35,7 @@ def get_mda_text(source_path, saveDoc_text):
                 continue
             logger.info(f"Processing folder: {folder}")
             fileList = os.listdir(os.path.join(source_path, folder))
+
         for file in fileList:
             if not file.lower().endswith('pdf'):
                 continue
@@ -84,6 +85,8 @@ def get_mda_text(source_path, saveDoc_text):
                 cur.execute(query)
             except sqlite3.OperationalError as e:
                 logger.debug(traceback.print_exception(*sys.exc_info()))
+        if not subfolders_required:
+            break
     cur.close()
 
 
