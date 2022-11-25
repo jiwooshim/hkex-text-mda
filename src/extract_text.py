@@ -96,8 +96,8 @@ def clean_text(text_list, language):
         standalones_removed = remove_standalone_text(duplicates_removed)
         capitals_removed = remove_capitalized_text(standalones_removed)
         cleaned_text = "".join(capitals_removed)
-        if re.findall(r'[\u4e00-\u9fa5！？。，《》「」『』－（）【】]+', cleaned_text) is not None:
-            cleaned_text = re.sub(r'[\u4e00-\u9fa5！？。，《》「」『』－（）【】]', ' ', cleaned_text)
+        if re.findall(r'[\u4e00-\u9fa5！？。，：；《》「」『』－（）【】]+', cleaned_text) is not None:
+            cleaned_text = re.sub(r'[\u4e00-\u9fa5！？。，：；《》「」『』－（）【】]', ' ', cleaned_text)
     else:
         cleaned_text = ""
     if "\t" in cleaned_text:
@@ -129,7 +129,7 @@ def extract_eng_chi(text_list):
     other_text_list = []
     for idx, text in enumerate(text_list):
         eng = re.findall(r'[a-zA-Z?!()\[\]{}<>]{1}', text)
-        chi = re.findall(r'[\u4e00-\u9fa5！？。，《》「」『』－（）【】]{1}', text)
+        chi = re.findall(r'[\u4e00-\u9fa5！？。，：；《》「」『』－（）【】]{1}', text)
         other = re.findall(r'[^a-zA-Z\u4e00-\u9fa5]{1}', text)
         if len(eng) == 0 and len(chi) == 0:
             other_text_list.append(text)
