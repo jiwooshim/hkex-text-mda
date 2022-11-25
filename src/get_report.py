@@ -15,7 +15,7 @@ from bs4 import BeautifulSoup
 import traceback
 import sys
 from .utils import module_path, download_path, reports_path, mda_path, metadata_db
-from .utils import module_start_time, t1codeVal, t2codeVal, from_date, to_date
+from .utils import module_start_time, stockIdList, t1codeVal, t2codeVal, from_date, to_date
 from .utils import today
 from .utils import logger
 from . import utils, get_mda
@@ -48,12 +48,11 @@ def get_pdf(html_doc, url, filepath):
             return
 
 
-def download_report(fromDateVal, toDateVal, saveDoc, saveDoc_mda):
+def download_report(fromDateVal, toDateVal, saveDoc, saveDoc_mda, stockId):
     cur = metadata_db.cursor()
-    params = {'sortDir': 0, 'sortByOptions': 'DateTime', 'category': 0, 'market': 'SEHK', 'stockId': -1, 'documentType': -1,
+    params = {'sortDir': 0, 'sortByOptions': 'DateTime', 'category': 0, 'market': 'SEHK', 'stockId': stockId, 'documentType': -1,
               't1code': t1codeVal, 't2Gcode': -2, 't2code': t2codeVal, 'searchType': 0, 'title': '', 'lang': 'E',
-              'rowRange': 100,
-              'fromDate': fromDateVal, 'toDate': toDateVal,}
+              'rowRange': 100, 'fromDate': fromDateVal, 'toDate': toDateVal}
 
     r_getCnt = requests.get('https://www1.hkexnews.hk/search/titleSearchServlet.do', params=params)
     try:
@@ -136,7 +135,8 @@ def main():
         if not os.path.exists(mda_path):
             os.makedirs(mda_path)
         logger.info(f"Downloading from {from_date} to {to_date}")
-        download_report(from_date, to_date, saveDoc=reports_path, saveDoc_mda=mda_path)
+        for stockId in stockIdList:
+            download_report(from_date, to_date, saveDoc=reports_path, saveDoc_mda=mda_path, stockId=stockId)
     elif len(from_date) == 6 and len(to_date) == 6:
         """Parsing months"""
         from_year = int(from_date[:4])
@@ -162,13 +162,14 @@ def main():
                     os.makedirs(saveDoc_mda)
                 fromDateVal = f'{year}{month}01'
                 toDateVal = f'{year}{month}{month_end_date}'
-                download_report(fromDateVal, toDateVal, saveDoc=saveDoc, saveDoc_mda=saveDoc_mda)
+                for stockId in stockIdList:
+                    download_report(fromDateVal, toDateVal, saveDoc=saveDoc, saveDoc_mda=saveDoc_mda, stockId=stockId)
     elif len(from_date) == 4 and len(to_date) == 4:
         """Parsing years"""
         from_year = int(from_date[:4])
         to_year = int(to_date[:4])
         for year in range(from_year, to_year+1):
-            for month in range(0, 12+1):
+            for month in range(1, 12+1):
                 month_end_date = calendar.monthrange(year, month)[1]
                 month = str(month).zfill(2)
                 logger.info(f"Downloading y {year}, m {month}")
@@ -180,7 +181,8 @@ def main():
                     os.makedirs(saveDoc_mda)
                 fromDateVal = f'{year}{month}01'
                 toDateVal = f'{year}{month}{month_end_date}'
-                download_report(fromDateVal, toDateVal, saveDoc=saveDoc, saveDoc_mda=saveDoc_mda)
+                for stockId in stockIdList:
+                    download_report(fromDateVal, toDateVal, saveDoc=saveDoc, saveDoc_mda=saveDoc_mda, stockId=stockId)
     else:
         raise Exception("--from_date and --to_date not in length of 8, 6, or 4. Please revise your entry. For help, "
                         "refer to the argument help description.")

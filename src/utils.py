@@ -18,11 +18,46 @@ import argparse
 import sys
 from datetime import datetime, timedelta
 import logging
+import requests
+import json
+import random
+
+
+def get_stockId(stock_code):
+    logger.info(f"get stockId for stock_code: {stock_code}")
+    count=0
+    while True:
+        count += 1
+        try:
+            res = requests.get(
+                f"https://www1.hkexnews.hk/search/prefix.do?&callback=callback&lang=EN&type=A&name={str(int(stock_code))}&market=SEHK")
+            res.raise_for_status()
+            break
+        except requests.exceptions.HTTPError as e:
+            logger.error(f"HTTPError occurred: {e}, count: {count}")
+            time.sleep(random.randint(5, 15))
+            if count > 10:
+                logger.error(f"HTTPError occurred 10+ times.")
+                raise f"HTTPError occurred 10+ times."
+    res = res.text.replace('callback(', '').replace(";", "")[:-2].strip()
+
+    res_json = json.loads(res)
+    stockId = res_json['stockInfo'][0]['stockId']
+    code = res_json['stockInfo'][0]['code']
+    name = res_json['stockInfo'][0]['name']
+    logger.info(f"result – stockId: {stockId} code: {code} name: {name}")
+    time.sleep(random.randint(5, 50)*0.01)
+
+    return stockId
+
 
 parser = argparse.ArgumentParser(description="This script extracts Table of Contents from PDF files using keywords."
                                              " Tested on Hong Kong Stock Exchange (HKEX) reports.")
 parser.add_argument("--download_path", "-dp", required=False, help='Absolute directory where you want to save your '
                                                                    'file. Default: ./reports_data')
+parser.add_argument("--stock_code", "-sc", required=False, help="Particular stock code of a company of interest, "
+                                                                "separated by commas. ex. '700' for TENCENT, '9988' "
+                                                                "for BABA. '700,9988' for both.")
 parser.add_argument("--report_type", "-t2", required=True, help='-2 => All Financial Statements/ESG Information, '
                                                                 '40100 => Annual Report, 40200 => Semi-annual Report '
                                                                 '40300 => Quarterly Report 40400 => ESG '
@@ -57,25 +92,8 @@ mda_path = os.path.join(download_path, 'hkex_reports_mda')
 mda_text_path = os.path.join(download_path, 'hkex_reports_mda_text')
 metadata_db = sqlite3.connect(os.path.join(download_path, f'metadata_{today}.db'))
 
-"""Below codes are required when downloading the reports. Uncomment as needed or pass in arguments from the terminal."""
-# t1codeVal = -2 ## => All
-t1codeVal = 40000 ## => Financial Statements/ESG Information
 
-# t2codeVal = -2 ## => All (under Financial Statements/ESG Information if t1codeVal == 40000 and entire data if t1codeVal == -2)
-# t2codeVal = 40100 ## => Annual Report (under Financial Statements/ESG Information)
-# t2codeVal = 40200 ## => Semi-annual Report (under Financial Statements/ESG Information)
-# t2codeVal = 40300 ## => Quarterly Report (under Financial Statements/ESG Information)
-# t2codeVal = 40400 ## => Environment, Social and Governance Information/Report (under Financial Statements/ESG Information)
-t2codeVal = args.report_type
-
-from_date = args.from_date
-to_date = args.to_date
-if len(from_date) == 8 and len(to_date) == 8:
-    if (datetime.strptime(to_date, '%Y%m%d') - datetime.strptime(from_date, '%Y%m%d')) > timedelta(days=365):
-        raise Exception("Date range from_date to to_date should be less than 365 days. Please use monthly or yearly "
-                        "range if you need data from a range bigger than 1 year.")
-
-"""Set up logging"""
+"""logger set up"""
 log_path = os.path.join(download_path, 'hkex-text.log')
 
 logger = logging.getLogger('hkex-text')
@@ -100,6 +118,37 @@ logger.info('Analysis started at {0}'.format(datetime.fromtimestamp(ts).strftime
 logger.info('Command line:\t{0}'.format(sys.argv[0]))
 logger.info('Arguments:\t\t{0}'.format(' '.join(sys.argv[:])))
 logger.info('=' * 65)
+"""logger set up"""
+
+
+"""Below codes are required when downloading the reports. Uncomment as needed or pass in arguments from the terminal."""
+if args.stock_code:
+    stockCodeList = args.stock_code.split(',')
+    stockIdList = [get_stockId(stockCode) for stockCode in stockCodeList]
+else:
+    stockCodeList = []
+    stockIdList = [-1]
+
+# t1codeVal = -2 ## => All
+t1codeVal = 40000 ## => Financial Statements/ESG Information
+
+# t2codeVal = -2 ## => All (under Financial Statements/ESG Information if t1codeVal == 40000 and entire data if t1codeVal == -2)
+# t2codeVal = 40100 ## => Annual Report (under Financial Statements/ESG Information)
+# t2codeVal = 40200 ## => Semi-annual Report (under Financial Statements/ESG Information)
+# t2codeVal = 40300 ## => Quarterly Report (under Financial Statements/ESG Information)
+# t2codeVal = 40400 ## => Environment, Social and Governance Information/Report (under Financial Statements/ESG Information)
+t2codeVal = args.report_type
+
+from_date = args.from_date
+to_date = args.to_date
+if len(from_date) == 8 and len(to_date) == 8:
+    if (datetime.strptime(to_date, '%Y%m%d') - datetime.strptime(from_date, '%Y%m%d')) > timedelta(days=365):
+        raise Exception("Date range from_date to to_date should be less than 365 days. Please use monthly or yearly "
+                        "range if you need data from a range bigger than 1 year.")
+
+if len(stockIdList) > 0:
+    logger.info(f"Selected stockCode list: {stockCodeList}")
+    logger.info(f"Selected stockId list: {stockIdList}")
 
 if t2codeVal == '-2':
     logger.info("Selected t2code==-2, Processing 'All' report types under 'Financial Statements/ESG Information'.")
