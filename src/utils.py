@@ -141,10 +141,12 @@ t2codeVal = args.report_type
 
 from_date = args.from_date
 to_date = args.to_date
+subfolders_required = True
 if len(from_date) == 8 and len(to_date) == 8:
+    subfolders_required = False
     if (datetime.strptime(to_date, '%Y%m%d') - datetime.strptime(from_date, '%Y%m%d')) > timedelta(days=365):
         raise Exception("Date range from_date to to_date should be less than 365 days. Please use monthly or yearly "
-                        "range if you need data from a range bigger than 1 year.")
+                        "range if you need data for a range bigger than 1 year.")
 
 if len(stockIdList) > 0:
     logger.info(f"Selected stockCode list: {stockCodeList}")
